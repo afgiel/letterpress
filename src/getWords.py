@@ -28,7 +28,7 @@ def searchForWords(letters, lexicon, word):
 	for letter in letters:
 		if lexicon.hasWord(word + letter):
 			words.add(word+letter)
-		elif lexicon.beginsWith(word + letter):
+		if lexicon.beginsWith(word + letter):
 			newLetters = list(letters)
 			newLetters.remove(letter)
 			newWord = word + letter

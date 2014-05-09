@@ -21,18 +21,7 @@ def getWords(board):
 		for letter in row:
 			letters.append(letter)
 	print '=== CREATING POSSIBLE WORDS ==='
-	return findAllWords(letters, lexicon)
-
-def findAllWords(letters, lexicon):
-	words = set()
-	for letter in letters:
-		if lexicon.beginsWith(letter):
-			newLetters = list(letters)
-			newLetters.remove(letter)
-			word = letter
-			words = words | searchForWords(newLetters, lexicon, word)
-	return words
-
+	return searchForWords(letters, lexicon, '')
 
 def searchForWords(letters, lexicon, word):
 	words = set()
